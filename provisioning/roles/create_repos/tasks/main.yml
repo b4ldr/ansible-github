@@ -1,0 +1,14 @@
+---
+- name: Install Gitlab cli dependencies
+  yum: name={{ item }} state=latest
+  with_items:
+  - rubygems
+  - ruby-devel
+  - gcc
+
+- name: Install Gitlab cli
+  gem: name={{ item }} state=latest
+  with_items:
+  - gitlab
+  
+ 

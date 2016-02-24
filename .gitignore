@@ -1,3 +1,5 @@
+# vim
+*.swp
 # vagrant
 .vagrant/
 # Byte-compiled / optimized / DLL files
