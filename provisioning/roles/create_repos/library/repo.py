@@ -62,6 +62,7 @@ import psycopg2
 from pwd import getpwnam
 
 def get_auth_token():
+    os.setuid(getpwnam('gitlab-psql').pw_uid)
     conn = psycopg2.connect(
             host='/var/opt/gitlab/postgresql', 
             database='gitlabhq_production')
