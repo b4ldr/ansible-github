@@ -110,10 +110,10 @@ class GitlabRepo(object):
             'public'                : self.public,
             'visibility_level'      : self.visibility_level}
 
-    def auth():
+    def auth(self):
         self.gitlab_ctl.auth()
 
-    def exists(self, **kwargs):
+    def exists(self):
         if self.exist == None:
             self.exist = False
             for project in self.gitlab_ctl.projects.all():
@@ -123,7 +123,7 @@ class GitlabRepo(object):
                     self.exist = True
         return self.exist
     
-    def remove():
+    def remove(self):
         rc  = 0
         out = ''
         err = ''
@@ -134,7 +134,7 @@ class GitlabRepo(object):
             err = e.message
         return  (rc, out, err)
 
-    def create(self, **kwargs):
+    def create(self):
         rc  = 0
         out = ''
         err = ''
@@ -145,7 +145,7 @@ class GitlabRepo(object):
             err = e.message
         return (rc, out, err)
 
-    def update(self, **kwargs):
+    def update(self):
         rc  = None
         out = ''
         err = ''
