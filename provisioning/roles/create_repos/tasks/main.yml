@@ -2,13 +2,12 @@
 - name: Install Gitlab cli dependencies
   yum: name={{ item }} state=latest
   with_items:
-  - rubygems
-  - ruby-devel
-  - gcc
+  - python-psycopg2
+  - python-pip
 
 - name: Install Gitlab cli
-  gem: name={{ item }} state=latest
+  pip: name={{ item }} state=latest
   with_items:
-  - gitlab
+  - python-gitlab
   
  

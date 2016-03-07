@@ -4,5 +4,6 @@
   - vars/main.yml
   roles: 
   - geerlingguy.gitlab
+  - dependencies
   - create_repos
 
