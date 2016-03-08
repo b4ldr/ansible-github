@@ -1,3 +1,4 @@
 ---
 - src: geerlingguy.gitlab
   version: 1.2.1
+- src: https://github.com/b4ldr/openldap_server

@@ -93,7 +93,8 @@ class GitlabRepo(object):
         self.snippets_enabled       = module.params['snippets_enabled']
         self.public                 = module.params['public']
         self.visibility_level       = module.params['visibility_level']
-        self.gitlab_ctl             = gitlab.Gitlab('http://127.0.0.1', get_auth_token())
+        self.gitlab_ctl             = gitlab.Gitlab(
+                'http://127.0.0.1', get_auth_token(), ssl_verify=False)
         self.auth()
 
     def _gitlab_repo(self):
@@ -128,7 +129,7 @@ class GitlabRepo(object):
         out = ''
         err = ''
         try:
-            gitlab_ctl.delete(self.id)
+            gitlab_ctl.projects.delete(self.id)
         except gitlab.GitlabDeleteError as e:
             rc  = 1
             err = e.message
@@ -183,7 +184,7 @@ def main():
     module = AnsibleModule(
             argument_spec=dict(
                 state=dict(default='present', choices=['present', 'absent'], type='str'),
-                name=dict(required=True, aliases=['user'], type='str'),
+                name=dict(required=True, type='str'),
                 path=dict(default=None, type='str'),
                 namespace_id=dict(default=None, type='str'),
                 description=dict(default=None, type='str'),

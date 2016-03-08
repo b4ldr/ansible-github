@@ -1,2 +1,13 @@
 ---
 gitlab_external_url: https://gitlab.example.com/
+gitlab_ldap_enabled: "true"
+gitlab_ldap_host: localhost
+gitlab_ldap_port: 636
+gitlab_ldap_uid: 'cn'
+gitlab_ldap_base: "DC=example,DC=com"
+gitlab_ldap_bind_dn: "cn=Manager,dc=example,dc=com"
+gitlab_ldap_password: passme
+gitlab_ldap_method: tls
+gitlab_redirect_http_to_https: "true"
+openldap_server_enable_plain: false
+
