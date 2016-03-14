@@ -4,6 +4,7 @@
   - vars/main.yml
   roles: 
   - openldap_server
+  - ldap_auth
   - geerlingguy.gitlab
   - dependencies
   - create_repos

@@ -1,0 +1,10 @@
+---
+
+- name: install LDAP client
+  yum: name={{ item }} state=latest
+  with_items:
+  - openldap-clients
+  - nss-pam-ldapd
+
+- name: enable ldap auth
+  shell: 'authconfig --enableldap --enableldapauth --ldapserver=ldapi:/// --ldapbasedn="dc=example,dc=com" --enablemkhomedir --update'

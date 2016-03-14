@@ -10,9 +10,3 @@
   with_items:
   - python-gitlab
 
-- name: Create repos
-  repo: name={{ item }}
-  with_items:
-  - test
-  
- 

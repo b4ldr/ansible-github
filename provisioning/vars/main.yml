@@ -10,4 +10,14 @@ gitlab_ldap_password: passme
 gitlab_ldap_method: tls
 gitlab_redirect_http_to_https: "true"
 openldap_server_enable_plain: false
+openldap_server_users:
+  ltest:
+    jbond:
+      password: '{SSHA}y0YGJtvWbYzzlWjAcoz2R8lc/jFMDzMe'
+    user1:
+      password: '{SSHA}y0YGJtvWbYzzlWjAcoz2R8lc/jFMDzMe'
+  ktest:
+    user2:
+      password: '{SSHA}y0YGJtvWbYzzlWjAcoz2R8lc/jFMDzMe'
+
 
