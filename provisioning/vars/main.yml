@@ -2,22 +2,25 @@
 gitlab_external_url: https://gitlab.example.com/
 gitlab_ldap_enabled: "true"
 gitlab_ldap_host: localhost
-gitlab_ldap_port: 636
+gitlab_ldap_port: 389
 gitlab_ldap_uid: 'cn'
-gitlab_ldap_base: "DC=example,DC=com"
+gitlab_ldap_base: "OU=Users,DC=example,DC=com"
 gitlab_ldap_bind_dn: "cn=Manager,dc=example,dc=com"
 gitlab_ldap_password: passme
-gitlab_ldap_method: tls
+gitlab_ldap_method: plain
 gitlab_redirect_http_to_https: "true"
-openldap_server_enable_plain: false
+openldap_server_enable_plain: true
 openldap_server_users:
   ltest:
     jbond:
       password: '{SSHA}y0YGJtvWbYzzlWjAcoz2R8lc/jFMDzMe'
+      email: john.bond@icann.org
     user1:
       password: '{SSHA}y0YGJtvWbYzzlWjAcoz2R8lc/jFMDzMe'
+      email: user1@example.com
   ktest:
     user2:
       password: '{SSHA}y0YGJtvWbYzzlWjAcoz2R8lc/jFMDzMe'
+      email: user2@example.com
 
 
