@@ -7,5 +7,5 @@
   - ldap_auth
   - geerlingguy.gitlab
   - dependencies
-  - create_repos
+  - manage_gitlab
 

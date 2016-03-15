@@ -56,6 +56,10 @@ options:
 
 '''
 
+import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+
 import os
 import gitlab
 import psycopg2
@@ -140,8 +144,9 @@ class GitlabRepo(object):
         out = ''
         err = ''
         try:
-            self.gitlab_ctl.projects.create(self._gitlab_repo())
-        except gitlab_repo.GitlabCreateError as e:
+            repo = self._gitlab_repo()
+            self.gitlab_ctl.projects.create(repo)
+        except gitlab.GitlabCreateError as e:
             rc  = 1
             err = e.message
         return (rc, out, err)
