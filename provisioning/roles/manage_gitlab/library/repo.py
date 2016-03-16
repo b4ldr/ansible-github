@@ -124,7 +124,9 @@ class GitlabRepo(object):
             for project in self.gitlab_ctl.projects.all():
                 if project.name == self.name:
                     self.id    = project.id
-                    self.project  = project
+                    #see issue 
+                    #https://github.com/gpocentek/python-gitlab/issues/104
+                    self.project  = self.gitlab_ctl.projects.get(project.id)
                     self.exist = True
                     return self.exist
         return self.exist
