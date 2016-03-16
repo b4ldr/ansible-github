@@ -13,7 +13,7 @@ gitlab_repos:
   - name: document_store
     visibility_level: 10
   - name: ansible
-    visibility_level: 10
+    visibility_level: 0
   - name: l_test
     visibility_level: 10
   - name: k_test

@@ -126,6 +126,7 @@ class GitlabRepo(object):
                     self.id    = project.id
                     self.project  = project
                     self.exist = True
+                    return self.exist
         return self.exist
     
     def remove(self):
@@ -191,7 +192,7 @@ def main():
                 state=dict(default='present', choices=['present', 'absent'], type='str'),
                 name=dict(required=True, type='str'),
                 path=dict(default=None, type='str'),
-                namespace_id=dict(default=None, type='str'),
+                namespace_id=dict(default=None, type='int'),
                 description=dict(default=None, type='str'),
                 issues_enabled=dict(default='yes', type='bool'),
                 merge_requests_enabled=dict(default='yes', type='bool'),
@@ -199,7 +200,7 @@ def main():
                 wiki_enabled=dict(default='yes', type='bool'),
                 snippets_enabled=dict(default='no', type='bool'),
                 public=dict(default='no', type='bool'),
-                visibility_level=dict(default=None, type='str'),
+                visibility_level=dict(default=None, type='int'),
             ),
             supports_check_mode=True
         )
