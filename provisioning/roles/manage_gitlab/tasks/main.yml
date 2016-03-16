@@ -11,10 +11,6 @@
   - python-gitlab
 
 - name: Creat repos
-  repo: name={{ item }}
-  with_items:
-  - document_store
-  - ansible
-  - l_test
-  - k_test
+  repo: name=${item.name} visibility_level=${item.visibility_level}
+  with_items: ${gitlab_repos}
 
