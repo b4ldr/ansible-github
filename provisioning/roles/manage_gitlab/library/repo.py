@@ -98,7 +98,7 @@ class GitlabRepo(object):
         self.public                 = module.params['public']
         self.visibility_level       = module.params['visibility_level']
         self.gitlab_ctl             = gitlab.Gitlab(
-                'http://127.0.0.1', get_auth_token(), ssl_verify=False)
+                'https://127.0.0.1', get_auth_token(), ssl_verify=False)
         self.auth()
 
     def _gitlab_repo(self):

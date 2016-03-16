@@ -14,4 +14,8 @@
   repo: name={{ item }}
   with_items:
   - test
+  - document_store
+  - ansible
+  - l_test
+  - k_test
 
