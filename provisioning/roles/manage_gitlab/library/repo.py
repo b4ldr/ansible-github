@@ -180,7 +180,7 @@ class GitlabRepo(object):
             self.project.visibility_level = self.visibility_level
             rc = 0
         if rc != None:
-            out = self.gitlab_ctl.update(self.project)
+            out = self.project.save()
         return (rc, out, err)
 
 
