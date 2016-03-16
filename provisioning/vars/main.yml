@@ -9,6 +9,15 @@ gitlab_ldap_bind_dn: "cn=Manager,dc=example,dc=com"
 gitlab_ldap_password: passme
 gitlab_ldap_method: ssl
 gitlab_redirect_http_to_https: "true"
+gitlab_repos:
+  - name: document_store
+    visibility_level: 10
+  - name: ansible
+    visibility_level: 10
+  - name: l_test
+    visibility_level: 0
+  - name: k_test
+    visibility_level: 0
 openldap_server_enable_plain: false
 openldap_server_users:
   ltest:
