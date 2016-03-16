@@ -15,9 +15,9 @@ gitlab_repos:
   - name: ansible
     visibility_level: 10
   - name: l_test
-    visibility_level: 0
+    visibility_level: 10
   - name: k_test
-    visibility_level: 0
+    visibility_level: 10
 openldap_server_enable_plain: false
 openldap_server_users:
   ltest:
