@@ -176,7 +176,7 @@ class GitlabRepo(object):
         if self.public and self.public != self.project.public:
             self.project.public = self.public
             rc = 0
-        if self.visibility_leve and self.visibility_leve != self.project.visibility_leve:
+        if self.visibility_level and self.visibility_level != self.project.visibility_level:
             self.project.visibility_level = self.visibility_level
             rc = 0
         if rc != None:
