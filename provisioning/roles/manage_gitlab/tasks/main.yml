@@ -10,7 +10,7 @@
   with_items:
   - python-gitlab
 
-- name: Creat repos
+- name: Create repos
   repo: name={{ item.name }} visibility_level={{ item.visibility_level }}
   with_items: "{{ gitlab_repos }}"
 

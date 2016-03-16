@@ -96,7 +96,7 @@ class GitlabRepo(object):
         self.wiki_enabled           = module.params['wiki_enabled']
         self.snippets_enabled       = module.params['snippets_enabled']
         self.public                 = module.params['public']
-        self.visibility_level       = module.params['visibility_level']
+        self.visibility_level       = int(module.params['visibility_level'])
         self.gitlab_ctl             = gitlab.Gitlab(
                 'https://127.0.0.1', get_auth_token(), ssl_verify=False)
         self.auth()
@@ -202,7 +202,7 @@ def main():
                 wiki_enabled=dict(default='yes', type='bool'),
                 snippets_enabled=dict(default='no', type='bool'),
                 public=dict(default='no', type='bool'),
-                visibility_level=dict(default=None, type='int'),
+                visibility_level=dict(default=None, type='str'),
             ),
             supports_check_mode=True
         )

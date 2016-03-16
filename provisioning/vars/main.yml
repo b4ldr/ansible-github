@@ -14,7 +14,7 @@ gitlab_repos:
     description: 'Genral Document Store'
     visibility_level: 10
   - name: ansible
-    visibility_level: 0
+    visibility_level: 10
   - name: l_test
     visibility_level: 10
   - name: k_test
