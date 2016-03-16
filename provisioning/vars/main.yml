@@ -11,6 +11,7 @@ gitlab_ldap_method: ssl
 gitlab_redirect_http_to_https: "true"
 gitlab_repos:
   - name: document_store
+    description: 'Genral Document Store'
     visibility_level: 10
   - name: ansible
     visibility_level: 0
