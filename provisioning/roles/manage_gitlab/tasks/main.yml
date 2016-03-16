@@ -12,5 +12,5 @@
 
 - name: Creat repos
   repo: name={{ item.name }} visibility_level={{ item.visibility_level }}
-  with_items: {{ gitlab_repos }}
+  with_items: "{{ gitlab_repos }}"
 
